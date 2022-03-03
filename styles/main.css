@@ -82,11 +82,14 @@ header a {
 *******************************************************
 *******************************************************/
 
+#nav_menu {
+    position: sticky;
+    top: 0;
+}
 .container {
     display: flex;
     list-style: none;
     background-color: steelblue;
-    position: relative;
 }
 .container li {
     flex: 1;
@@ -97,6 +100,7 @@ header a {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    transition: all .5s;
 }
 .container li a:hover {
     color: black;
