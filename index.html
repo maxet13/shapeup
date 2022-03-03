@@ -26,23 +26,21 @@
 	<!-- title tag -->
 	<title>Shape Up</title>
 
-
-	<!-- Slicknav -->
+	<!-- Slicknav Stylesheet link -->
 	<link rel="stylesheet" href="styles/slicknav.css">
-
-	<!-- jQuery CDN -->
+	
+	<!-- jQuery CDN - needed to drive slicknav -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-	<!-- local js slicknav script file -->
+	
+	<!-- link to local js slicknav script file -->
 	<script src="js/jquery.slicknav.min.js"></script>
-
-	<!-- slicknav script -->
+	
+	<!-- slicknav script - converts contents of nav_menu to mobilemenu -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#nav_menu').slicknav({prependTo:"#mobilemenu"});
 		});
 		</script>
-
 
 </head>
 
@@ -56,12 +54,12 @@
 		<h3>Find the best fit for you</h3>
 	</header>
 
-	<!-- Slicknav Nav Tags -->
+	<!-- slicknav nav tags -->
 	<nav id="mobilemenu"></nav>
-
+	
 	<!-- nav_menu - code for the horizontal navigation bar -->
 	<nav id="nav_menu">
-		<ul>
+		<ul class="container">
 			<li><a href="index.html">Home</a></li>
 			<li><a href="cardio/index.html">Cardio</a></li>
 			<li><a href="diet/index.html">Diet</a>
@@ -84,7 +82,7 @@
 
 	<!-- main - contains the "main" section of the web page - everything between the header and the footer -->
 	<main>
-
+		<h1>Get Ready To Shape Up!</h1>
 		<!-- this aside is the left column of the webpage -->
 		<aside id="leftaside">
 			<!-- nav_list - this code makes up the vertical navigation list in the left column -->
@@ -102,7 +100,7 @@
 
 		<!-- this section is the right column of the web page -->
 		<section>
-			<h1>Get Ready To Shape Up!</h1>
+			
 
 			<p>How many times have you started a new workout routine or diet? And how many times has it failed to give you the results you want? Now, with the help of this site, you can learn about the exercises and diet that work best for you. We offer personalized programs as well as access to several health and dieting tools. So don't wait! Get started looking and feeling better today.</p>
 
