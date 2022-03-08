@@ -1,9 +1,7 @@
 <!doctype html> <!-- doctype tag must exist at the top of every html5 file -->
-
 <html lang="en">
 <!-- head section -- the "backstage" area of the web page -->
 <head>
-
 	<!-- meta tags -->
 	<meta charset="utf-8" />
 	<meta name="description" content="Learn how to properly take care of your body">
@@ -26,21 +24,20 @@
 	<!-- title tag -->
 	<title>Shape Up</title>
 
+	<!-- ----------- ----------- Slicknav Links and Scripts ----------- ----------- -->
 	<!-- Slicknav Stylesheet link -->
 	<link rel="stylesheet" href="styles/slicknav.css">
-	
 	<!-- jQuery CDN - needed to drive slicknav -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
 	<!-- link to local js slicknav script file -->
 	<script src="js/jquery.slicknav.min.js"></script>
-	
 	<!-- slicknav script - converts contents of nav_menu to mobilemenu -->
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#nav_menu').slicknav({prependTo:"#mobilemenu"});
 		});
-		</script>
+	</script>
+	<!-- ----------- ---------- END Slicknav Links and Scripts ---------- ---------- -->
 
 </head>
 
@@ -80,6 +77,7 @@
 		</ul>
 	</nav>
 
+
 	<!-- main - contains the "main" section of the web page - everything between the header and the footer -->
 	<main>
 		<h1>Get Ready To Shape Up!</h1>
@@ -96,31 +94,31 @@
 					<li><a href="https://www.medicalnewstoday.com/articles/317314" target="_blank">Yoga workout</a></li>
 				</ul>
 			</nav>
+			<article>
+				<img src="images/break.jpg">
+				<img src="images/exercise.jpg">
+				<img src="images/meditate.jpg">
+			</article>
 		</aside>
 
 		<!-- this section is the right column of the web page -->
 		<section>
-			
-
 			<p>How many times have you started a new workout routine or diet? And how many times has it failed to give you the results you want? Now, with the help of this site, you can learn about the exercises and diet that work best for you. We offer personalized programs as well as access to several health and dieting tools. So don't wait! Get started looking and feeling better today.</p>
-
 			<p>As fitness expert Amanda Russell said:</p>
 			<blockquote>Fitness is about so much more than exercise. It’s a catalyst for positive change, and it affects every aspect of your life.</blockquote>
-			
 			<h3>What We Offer</h3>
-
+			<img class="icon" src="images/weightlifting.png">
 			<h3>Build Strong Muscles</h3>
 			<p>Tired of being tired? Strength training can help you manage or lose weight and increase your metabolism to help you burn more calories. It can also increase bone density and reduce the risk of osteoporosis.</p>
-
+			<img class="icon" src="images/cyclist.png">
 			<h3>Get Your Heart Rate Up</h3>
 			<p>Want to lose weight? Cardiovascular exercise burns calories and improves overall health. It can reduce belly fat, promote brain growth, prevent stress, and help you focus.</p>
-
+			<img class="icon" src="images/lotus-position.png">
 			<h3>Relax</h3>
 			<p>Stressed out? Stress can weaken the immune system and cause high blood pressure, fatigue, depression, anxiety, and even heart disease. Learn ways to manage and reduce stress.</p>
-
+			<img class="icon" src="images/vegetables.png">
 			<h3>Eat What's Right For You</h3>
 			<p>Are you really what you eat? Lose weight, gain weight, or just feel great! Maintaining a healthy diet is probably the most important thing you can do to promote overall health.</p>
-			
 		</section>
 
 		<aside id="rightaside">
@@ -136,9 +134,17 @@
 		</aside>
 	</main>
 
+	<!-- Javascript - Get Current Year for the Footer -->
+    <script>
+        window.onload = function() {
+            var d = new Date();
+            document.getElementById("copyright").innerHTML = d.getFullYear();
+        }
+    </script>
+
 	<!-- footer - the bottom section of the web page, containing the copyright information -->
 	<footer>
-		<p>&copy; 2022 Shape Up!</p>
+		<p>&copy; <span id="copyright"></span> Shape Up!</p>
 	</footer>
 </body>
 </html>

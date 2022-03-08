@@ -21,6 +21,7 @@
 html {
     background-color: lightsteelblue;
     background-image: url("../images/bgtile.jpg");
+    background-attachment: fixed;
 }
 
 /* Body */
@@ -46,7 +47,7 @@ h1 {
     text-align: center;
     margin: 10px 0 0;
     font-variant: small-caps;
-    text-shadow: 1px 1px 2px #000000, -1px -1px 2px #000000, -1px 1px 2px #000000, 1px -1px 2px #000000;
+    text-shadow: 1px 1px 2px #000000, -1px -1px 2px #000000, 1px -1px 2px #000000, -1px 1px 2px #000000;
 }
 
 /* Header section of the web page */
@@ -76,12 +77,11 @@ header a {
 *******************************************************
 *******************************************************
 **                                                   **
-**    Horizontal Flexbox navigation menu - nav_menu  **
+**     Horizontal FLEXBOX navigation menu            **
 **                                                   **
 *******************************************************
 *******************************************************
-*******************************************************/
-
+******************************************************/
 #nav_menu {
     position: sticky;
     top: 0;
@@ -90,6 +90,8 @@ header a {
     display: flex;
     list-style: none;
     background-color: steelblue;
+    position: relative;
+    
 }
 .container li {
     flex: 1;
@@ -100,32 +102,36 @@ header a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    transition: all .5s;
+    transition: background-color .5s;
 }
 .container li a:hover {
     color: black;
     background-color: lightsteelblue;
 }
-/* flexbox nav menu second tier */
+
+/* flexbox nav menu second tier code */
 .container ul {
     display: none;
+    background-color: steelblue;
     width: 20%;
     list-style: none;
     position: absolute;
     top: 100%;
-    background-color: steelblue;
+    box-shadow: 7px 7px 15px -1px gray;
 }
 .container ul li {
     flex-direction: column;
+   
 }
 .container ul li a {
-    text-align: left;
     padding-left: 1em;
+    display: block;
+    width: 100%;
+   
 }
 .container li:hover > ul {
     display: block;
 }
-
 
 
 
@@ -150,7 +156,7 @@ header a {
     padding: .5em 0 .5em .5em;
     color: black;
     border-radius: 25px;
-    transition: all 1s;
+    transition: all 1s; 
 }
 #nav_list ul li a:hover {
     color: white;
@@ -184,12 +190,42 @@ section {
     float: right;
 }
 
+article {
+    display: flex;
+    flex-direction: column;
+}
+article > img {
+    margin: 1em 2em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 3px darkslategray;
+}
+.icon {
+    float: left;
+    max-width: 25px;
+    margin-right: .5em;
+}
+section h3::after {
+    clear: left;
+}
+section p {
+    margin: 0 2em 1.5em;
+}
+section h3 {
+    margin-bottom: 5px;
+}
+.underconstruction {
+    display: block;
+    margin: auto;
+}
 
 
 blockquote {
+    width: 80%;
+    margin: 1em auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 120%;
     font-style: italic;
     padding: 1em;
-    font-family: 'Times New Roman', Times, serif;
     border-left: 3px solid steelblue;
     background-color: #eeeeee;
     border-radius: 5px;
@@ -200,7 +236,7 @@ h3 {
 aside a {
     text-decoration: none;
 }
-aside h2 {
+main h2 {
     color: maroon;
     text-align: center;
     margin-bottom: 10px;
@@ -243,9 +279,13 @@ footer p {
 /* Media Queries */
 /* First Media Query is for the largest Maximum width- 900px - remember to work from large to small in order top to bottom */
 @media only screen and (max-width: 900px) {
+    html {
+        background-image: none;
+    }
     body {
         box-shadow: none;
         font-size: 90%;
+        border: none;
     }
     #leftaside {
         display: none;
@@ -280,11 +320,9 @@ footer p {
     header h2 {
         font-size: 200%;
     }
-
     h1 {
         font-size: 200%;
     }
-
     /* Make the page single column by resetting all floats to "none" and fixing width, margins & padding properties */
     section, aside {
         float: none;
